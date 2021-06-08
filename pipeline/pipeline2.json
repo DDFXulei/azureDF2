@@ -13,6 +13,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"factoryName": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"var1": {
 				"type": "String"
