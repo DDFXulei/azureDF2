@@ -1,0 +1,12 @@
+{
+	"name": "josephDF",
+	"properties": {
+		"globalParameters": {
+			"Global1": {
+				"type": "string",
+				"value": "hello,world"
+			}
+		}
+	},
+	"location": "eastus2"
+}
