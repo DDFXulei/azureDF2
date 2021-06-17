@@ -1,5 +1,5 @@
 {
-	"name": "pipeline5",
+	"name": "If-Condition",
 	"properties": {
 		"activities": [
 			{
@@ -173,7 +173,10 @@
 												"storeSettings": {
 													"type": "AzureBlobFSReadSettings",
 													"recursive": true,
-													"wildcardFileName": "@item()",
+													"wildcardFileName": {
+														"value": "@item()",
+														"type": "Expression"
+													},
 													"enablePartitionDiscovery": false
 												},
 												"formatSettings": {
