@@ -17,30 +17,20 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select * from [SalesLT].[Customer] WHERE ?AdfDynamicRangePartitionCondition",
 						"queryTimeout": "02:00:00",
-						"partitionOption": "DynamicRange",
-						"partitionSettings": {
-							"partitionColumnName": "CustomerID",
-							"partitionUpperBound": "10",
-							"partitionLowerBound": "10"
-						}
+						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "PreserveHierarchy"
+							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
-							"maxRowsPerFile": 10,
-							"fileNamePrefix": {
-								"value": "cust_[n]",
-								"type": "Expression"
-							},
+							"maxRowsPerFile": 50,
+							"fileNamePrefix": "cust_",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false,
