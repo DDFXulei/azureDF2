@@ -16,22 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
+						"type": "SqlServerSource",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"maxRowsPerFile": 50,
-							"fileNamePrefix": "cust_",
-							"quoteAllText": true,
-							"fileExtension": ".csv"
-						}
+						"type": "AzureSqlSink",
+						"sqlWriterStoredProcedureName": "[dbo].[uspEmp]",
+						"sqlWriterTableType": "EmpType",
+						"storedProcedureTableTypeParameterName": "emp"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -45,13 +38,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "SqlServerTable1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText3",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				]
