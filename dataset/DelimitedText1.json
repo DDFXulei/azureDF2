@@ -13,7 +13,7 @@
 				"fileName": "emp.csv",
 				"fileSystem": "input"
 			},
-			"columnDelimiter": "\t",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
@@ -29,6 +29,10 @@
 			},
 			{
 				"name": "age",
+				"type": "String"
+			},
+			{
+				"name": "tableName",
 				"type": "String"
 			}
 		]

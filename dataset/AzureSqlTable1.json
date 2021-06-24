@@ -73,8 +73,11 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "SalesLT",
-			"table": "Customer"
+			"schema": "dbo",
+			"table": {
+				"value": "@variables('tableName')",
+				"type": "Expression"
+			}
 		}
 	}
 }
