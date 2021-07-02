@@ -1,12 +1,9 @@
 {
 	"name": "josephDF",
-	"properties": {
-		"globalParameters": {
-			"Global1": {
-				"type": "string",
-				"value": "hello,world"
-			}
-		}
-	},
-	"location": "eastus2"
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3b55156b-5674-4e34-a2b8-8e7ad4074286",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
 }

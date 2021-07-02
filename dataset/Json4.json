@@ -1,39 +1,33 @@
 {
-	"name": "DelimitedText2",
+	"name": "Json4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage2",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "emp2.csv",
+					"value": "@item().name",
 					"type": "Expression"
 				},
 				"fileSystem": "output"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"quoteChar": "\""
-		},
-		"schema": [
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
 			}
-		]
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"intial_date": {
+					"type": "string"
+				},
+				"end_date": {
+					"type": "string"
+				}
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "Json2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage2",
@@ -10,21 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "data.json",
-				"fileSystem": "input"
+				"fileSystem": "output"
 			}
 		},
-		"schema": {
-			"type": "object",
-			"properties": {
-				"intial_date": {
-					"type": "string"
-				},
-				"end_date": {
-					"type": "string"
-				}
-			}
-		}
+		"schema": {}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
